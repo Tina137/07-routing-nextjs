@@ -3,9 +3,11 @@ import css from "./NotePreview.module.css";
 
 import { useRouter } from "next/navigation";
 
-import type { ModalProps } from "@/types/note";
+type Props = {
+  children: React.ReactNode;
+};
 
-const NotePreview = ({ children }: ModalProps) => {
+const NotePreview = ({ children }: Props) => {
   const router = useRouter();
 
   const close = () => router.back();

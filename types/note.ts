@@ -17,7 +17,7 @@ export interface InitialValuesProps {
 
 export interface ModalProps {
   children: ReactNode;
-  onClose?: () => void;
+  onClose: () => void;
 }
 
 export const tagsArr = [
