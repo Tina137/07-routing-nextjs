@@ -1,7 +1,7 @@
 "use client";
 import css from "./TagsMenu.module.css";
 import { useState } from "react";
-
+import Link from "next/link";
 import { tagsArr } from "@/types/note";
 
 const TagsMenu = () => {
@@ -19,10 +19,14 @@ const TagsMenu = () => {
         <ul className={css.menuList}>
           {tagsArr.map((tag) => {
             return (
-              <li key={tag} className={css.menuItem}>
-                <a href={`/notes/filter/${tag}`} className={css.menuLink}>
+              <li
+                onClick={() => setDef(false)}
+                key={tag}
+                className={css.menuItem}
+              >
+                <Link href={`/notes/filter/${tag}`} className={css.menuLink}>
                   {tag}
-                </a>
+                </Link>
               </li>
             );
           })}

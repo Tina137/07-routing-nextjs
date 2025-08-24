@@ -22,12 +22,7 @@ const NotePreviewClient = () => {
 
   if (error || !note) return <p>Some error..</p>;
 
-  return (
-    <NotePreview>
-      <h2>{note.title}</h2>
-      <p>{note.content}</p>
-    </NotePreview>
-  );
+  return <NotePreview note={note} />;
 };
 
 export default NotePreviewClient;

@@ -13,7 +13,7 @@ export default async function NotesPage({ params }: Props) {
       initialData={initialData}
       initialPage={1}
       initialQuery=""
-      category={slug[0]}
+      tag={slug[0]}
     />
   );
 }

@@ -1,26 +1,18 @@
-"use client";
-import css from "./NotePreview.module.css";
-
-import { useRouter } from "next/navigation";
+import Modal from "@/components/Modal/Modal";
+import { Note } from "@/types/note";
 
 type Props = {
-  children: React.ReactNode;
+  note: Note;
 };
 
-const NotePreview = ({ children }: Props) => {
-  const router = useRouter();
-
-  const close = () => router.back();
-
+const NotePreview = ({ note }: Props) => {
   return (
-    <div className={css.container}>
-      <div className={css.item}>
-        {children}
-        <button className={css.backBtn} onClick={close}>
-          Close
-        </button>
-      </div>
-    </div>
+    <Modal>
+      <h2>{note.title}</h2>
+      <p>{note.content}</p>
+      <p>{note.tag}</p>
+      <p>{note.createdAt}</p>
+    </Modal>
   );
 };
 

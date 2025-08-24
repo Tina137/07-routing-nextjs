@@ -1,4 +1,4 @@
-import css from "./note-found.module.css";
+import css from "./not-found.module.css";
 const NotFound = () => {
   return (
     <>
