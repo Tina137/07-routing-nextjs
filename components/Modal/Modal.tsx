@@ -4,7 +4,7 @@ import { createPortal } from "react-dom";
 import { useEffect } from "react";
 import { ModalProps } from "@/types/note";
 
-export function NoteModal({ onClose, children }: ModalProps) {
+export function Modal({ onClose, children }: ModalProps) {
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -39,24 +39,3 @@ export function NoteModal({ onClose, children }: ModalProps) {
     document.body
   );
 }
-
-import { useRouter } from "next/navigation";
-
-type Props = {
-  children: React.ReactNode;
-};
-
-export const Modal = ({ children }: Props) => {
-  const router = useRouter();
-
-  const close = () => router.back();
-
-  return (
-    <div>
-      <div>
-        {children}
-        <button onClick={close}>Close</button>
-      </div>
-    </div>
-  );
-};

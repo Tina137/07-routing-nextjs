@@ -3,11 +3,12 @@ import { Note } from "@/types/note";
 
 type Props = {
   note: Note;
+  onClose: () => void;
 };
 
-const NotePreview = ({ note }: Props) => {
+const NotePreview = ({ note, onClose }: Props) => {
   return (
-    <Modal>
+    <Modal onClose={onClose}>
       <h2>{note.title}</h2>
       <p>{note.content}</p>
       <p>{note.tag}</p>
